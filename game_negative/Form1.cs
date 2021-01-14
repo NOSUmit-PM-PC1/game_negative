@@ -37,16 +37,18 @@ namespace game_negative
         {
             int stroka = e.RowIndex;
             int stolbec = e.ColumnIndex;
-
-            /*for (int i = 0; i < m; i++)
+            
+            // игра перекрашка
+            for (int i = 0; i < m; i++)
                 matr[stroka, i] = (matr[stroka, i] + 1) % 2;
             for (int i = 0; i < n; i++)
                 if (matr[i, stolbec] == 1)
                     matr[i, stolbec] = 0;
                 else
                     matr[i, stolbec] = 1;
-            */
-            matr[stroka, stolbec] = 1;
+            
+            // просто натыкать вершин
+            //matr[stroka, stolbec] = 1;
             change_dataGrid();
             dataGridView1.ClearSelection();
         }
@@ -85,7 +87,7 @@ namespace game_negative
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            fileName = "matr.txt";
+            fileName = "matr_big.txt";
             matr = readFromFileMatr(fileName);
             n = matr.GetLength(0);
             m = matr.GetLength(1);
